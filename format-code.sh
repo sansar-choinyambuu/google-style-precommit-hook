@@ -1,12 +1,12 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 GOOGLE_JAVA_FORMAT_VERSION="1.7"
 
 usage() { echo "Usage: $0 [-v <version>]" 1>&2; exit 1; }
-while getopts ':v:' o; do
+while getopts 'v:' o; do
   case $o in
     v) GOOGLE_JAVA_FORMAT_VERSION=$OPTARG ;;
-    *) usage ;;
+    ?) usage ;;
   esac
 done
 
