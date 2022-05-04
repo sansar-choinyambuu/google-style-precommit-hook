@@ -29,4 +29,6 @@ then
 fi
 cd ..
 
-java -jar .cache/google-java-format-${GOOGLE_JAVA_FORMAT_VERSION}-all-deps.jar --replace "$@" >/dev/null
+changed_java_files=$(git diff --cached --name-only --diff-filter=ACMR | grep ".*java$" )
+echo $changed_java_files
+java -jar .cache/google-java-format-${GOOGLE_JAVA_FORMAT_VERSION}-all-deps.jar --replace $changed_java_files
