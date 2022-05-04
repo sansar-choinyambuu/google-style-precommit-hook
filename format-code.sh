@@ -1,11 +1,10 @@
 #!/usr/bin/env sh
 
 GOOGLE_JAVA_FORMAT_VERSION="1.7"
-while getopts 'srd:f:' c
+while getopts 'v:' c
 do
   case $c in
     v) GOOGLE_JAVA_FORMAT_VERSION=$OPTARG ;;
-    \?) exit 1
   esac
 done
 
@@ -13,7 +12,7 @@ mkdir -p .cache
 cd .cache
 if [ ! -f google-java-format-${GOOGLE_JAVA_FORMAT_VERSION}-all-deps.jar ]
 then
-    curl -LJO "https://github.com/google/google-java-format/releases/download/google-java-format-${GOOGLE_JAVA_FORMAT_VERSION}/google-java-format-${GOOGLE_JAVA_FORMAT_VERSION}-all-deps.jar"
+    curl -LJO "https://github.com/google/google-java-format/releases/download/v${GOOGLE_JAVA_FORMAT_VERSION}/google-java-format-${GOOGLE_JAVA_FORMAT_VERSION}-all-deps.jar"
     chmod 755 google-java-format-${GOOGLE_JAVA_FORMAT_VERSION}-all-deps.jar
 fi
 cd ..
