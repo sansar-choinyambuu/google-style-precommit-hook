@@ -19,4 +19,4 @@ probably want to add `.cache/` to the `.gitignore` file of the project which
 uses this hook.
 
 ## Arguments
--v forces to use specific (default=1.7) google-java-format version. e.g. -v1.15.0
+-v forces to use specific (default=1.15.0) google-java-format version. e.g. -v1.15.0
